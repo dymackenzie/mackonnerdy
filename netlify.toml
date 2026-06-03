@@ -1,0 +1,7 @@
+# Netlify config — Next.js runs natively via the official plugin.
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
