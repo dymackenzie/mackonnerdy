@@ -24,8 +24,8 @@ export function Placeholder({ src, label, className = "", tone = "dark" }: Props
       className={`relative overflow-hidden ${className}`}
       style={{
         background: isDark
-          ? "radial-gradient(120% 120% at 30% 20%, #23201a 0%, #14120d 70%)"
-          : "radial-gradient(120% 120% at 30% 20%, #f7f0df 0%, #e6dcc3 75%)",
+          ? "radial-gradient(120% 120% at 30% 20%, #1a2422 0%, #0c0f0e 70%)"
+          : "radial-gradient(120% 120% at 30% 20%, #f4f7ef 0%, #dde4d6 75%)",
       }}
       aria-hidden="true"
     >
@@ -37,8 +37,8 @@ export function Placeholder({ src, label, className = "", tone = "dark" }: Props
         fill="none"
       >
         <g
-          stroke={isDark ? "#c9a24a" : "#14120d"}
-          strokeOpacity={isDark ? 0.22 : 0.14}
+          stroke={isDark ? "#c6f500" : "#0c0f0e"}
+          strokeOpacity={isDark ? 0.28 : 0.14}
           strokeWidth="1"
         >
           <rect x="40" y="30" width="320" height="240" />

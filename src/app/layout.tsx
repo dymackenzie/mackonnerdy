@@ -1,16 +1,14 @@
-import type { Metadata } from "next";
-import { Fraunces, Hanken_Grotesk } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Archivo, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/content/site";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
   display: "swap",
-  style: ["normal", "italic"],
-  axes: ["SOFT"],
 });
 
 const hanken = Hanken_Grotesk({
@@ -18,6 +16,12 @@ const hanken = Hanken_Grotesk({
   subsets: ["latin"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#14120d",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mackonnerdy.com"),
@@ -55,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${hanken.variable} h-full antialiased`}
+      className={`${archivo.variable} ${hanken.variable} h-full antialiased`}
     >
       <body className="relative flex min-h-full flex-col">
         <Header />

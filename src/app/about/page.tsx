@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHeader } from "@/components/PageHeader";
 import { Placeholder } from "@/components/Placeholder";
 import { Reveal } from "@/components/Reveal";
 import { Container, CTA, Eyebrow } from "@/components/ui";
@@ -15,55 +16,58 @@ export default function AboutPage() {
   return (
     <>
       {/* ---------- PAGE HEADER ---------- */}
-      <header className="relative z-10 overflow-hidden bg-ink text-paper">
-        <Container className="pb-20 pt-40 md:pb-28 md:pt-48">
-          <Eyebrow className="text-gold">{journey.eyebrow}</Eyebrow>
-          <h1 className="display-xl mt-6 max-w-4xl text-paper-bright">
-            {journey.title}
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-paper/70">
-            {journey.lede}
-          </p>
-        </Container>
-      </header>
+      <PageHeader
+        eyebrow={journey.eyebrow}
+        title={journey.title}
+        lede={journey.lede}
+        watermark="Journey"
+        edgeLabel="The Making of a Champion"
+      />
 
-      {/* ---------- PHASE CARDS ---------- */}
-      <section className="relative z-10 bg-paper">
+      {/* ---------- PHASE CARDS (staggered) ---------- */}
+      <section className="relative z-10 overflow-x-clip bg-paper tex-warm">
         <Container className="py-24 md:py-32">
-          <div className="grid gap-10 md:grid-cols-3">
-            {journey.phases.map((phase, i) => (
-              <Reveal
-                key={phase.tag}
-                delay={i * 120}
-                as="article"
-                className="group flex flex-col"
-              >
-                <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
-                  <Placeholder
-                    src={phase.image}
-                    label={phase.tag}
-                    tone="dark"
-                    className="h-full w-full transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <span className="absolute left-4 top-4 rounded-full bg-gold px-3 py-1 text-xs font-semibold text-ink">
-                    0{i + 1}
-                  </span>
-                </div>
-                <Eyebrow className="mt-6 text-gold">{phase.tag}</Eyebrow>
-                <h2 className="mt-4 font-display text-2xl leading-tight text-ink">
-                  {phase.title}
-                </h2>
-                <p className="mt-4 text-sm leading-relaxed text-ink/70">
-                  {phase.body}
-                </p>
-              </Reveal>
-            ))}
+          <div className="grid gap-x-10 gap-y-14 md:grid-cols-3">
+            {journey.phases.map((phase, i) => {
+              // descending staircase offset for an editorial, asymmetric feel
+              const offset = ["md:mt-0", "md:mt-16", "md:mt-32"][i] ?? "md:mt-0";
+              return (
+                <Reveal
+                  key={phase.tag}
+                  delay={i * 120}
+                  as="article"
+                  className={`group flex flex-col ${offset}`}
+                >
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
+                    <Placeholder
+                      src={phase.image}
+                      label={phase.tag}
+                      tone="dark"
+                      className="h-full w-full transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute -bottom-2 left-3 select-none font-display text-7xl leading-none text-outline text-paper/70"
+                    >
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <Eyebrow className="mt-6 text-gold">{phase.tag}</Eyebrow>
+                  <h2 className="mt-4 font-display text-2xl leading-tight text-ink">
+                    {phase.title}
+                  </h2>
+                  <p className="mt-4 text-sm leading-relaxed text-ink/70">
+                    {phase.body}
+                  </p>
+                </Reveal>
+              );
+            })}
           </div>
         </Container>
       </section>
 
       {/* ---------- PULL QUOTE ---------- */}
-      <section className="relative z-10 bg-paper-bright">
+      <section className="relative z-10 bg-paper-bright tex-warm">
         <Container className="py-20 md:py-28">
           <Reveal className="mx-auto max-w-4xl text-center">
             <span className="font-display text-6xl leading-none text-gold">“</span>
@@ -72,22 +76,50 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* ---------- NARRATIVE CHAPTERS ---------- */}
-      <section className="relative z-10 bg-paper">
+      {/* ---------- NARRATIVE CHAPTERS (alternating) ---------- */}
+      <section className="relative z-10 overflow-x-clip bg-paper tex-warm">
         <Container className="py-24 md:py-32">
-          <div className="mx-auto max-w-3xl">
-            {journey.chapters.map((c, i) => (
-              <Reveal
-                key={c.heading}
-                delay={i * 80}
-                className="border-t border-ink/10 py-12 first:border-t-0 first:pt-0"
-              >
-                <h3 className="display-lg text-ink">{c.heading}</h3>
-                <p className="mt-6 text-lg leading-relaxed text-ink/75">
-                  {c.body}
-                </p>
-              </Reveal>
-            ))}
+          <div className="flex flex-col gap-20 md:gap-28">
+            {journey.chapters.map((c, i) => {
+              const flip = i % 2 === 1;
+              return (
+                <Reveal
+                  key={c.heading}
+                  delay={i * 80}
+                  className="grid items-start gap-6 md:grid-cols-12"
+                >
+                  {/* oversized outlined index */}
+                  <div
+                    className={`relative md:col-span-2 ${
+                      flip ? "md:order-2 md:col-start-11" : ""
+                    }`}
+                  >
+                    <span
+                      aria-hidden
+                      className="select-none font-display text-7xl leading-none text-outline text-gold opacity-60 md:text-8xl"
+                    >
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <div
+                    className={`md:col-span-7 ${
+                      flip
+                        ? "md:order-1 md:col-start-2 md:text-right"
+                        : "md:col-start-4"
+                    }`}
+                  >
+                    <h3 className="display-lg text-ink">{c.heading}</h3>
+                    <p
+                      className={`mt-6 text-lg leading-relaxed text-ink/75 ${
+                        flip ? "md:ml-auto" : ""
+                      } md:max-w-xl`}
+                    >
+                      {c.body}
+                    </p>
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
         </Container>
       </section>
@@ -95,7 +127,7 @@ export default function AboutPage() {
       {/* ---------- RESULTS & RANKINGS ---------- */}
       <section
         id="results"
-        className="relative z-10 scroll-mt-24 bg-ink text-paper"
+        className="panel-soft relative z-10 scroll-mt-24 bg-ink tex-dark text-paper"
       >
         <Container className="py-24 md:py-32">
           <Reveal>
@@ -104,7 +136,7 @@ export default function AboutPage() {
           </Reveal>
 
           {/* Ranking highlights */}
-          <Reveal delay={100} className="mt-14 grid gap-px overflow-hidden rounded-sm border border-paper/10 bg-paper/10 sm:grid-cols-3">
+          <Reveal delay={100} className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-paper/10 bg-paper/10 sm:grid-cols-3">
             {results.rankings.map((r) => (
               <div key={r.label} className="bg-ink p-8">
                 <p className="font-display text-4xl text-gold-bright">{r.value}</p>
@@ -164,7 +196,7 @@ export default function AboutPage() {
             <CTA
               href="/contact"
               variant="solid"
-              className="bg-gold text-ink hover:bg-gold-bright"
+              className="bg-volt text-ink hover:bg-volt-bright"
             >
               Work With Mackonner
             </CTA>

@@ -6,22 +6,34 @@
    ========================================================================= */
 
 @theme {
-  /* Core palette */
-  --color-ink: #14120d;
-  --color-ink-soft: #1d1a13;
-  --color-ink-line: #2a261c;
-  --color-paper: #f1e9d6;
-  --color-paper-bright: #faf4e6;
-  --color-paper-dim: #cabfa6;
+  /* Core palette — deep court black + crisp bright paper */
+  --color-ink: #0c0f0e;
+  --color-ink-soft: #161b1b;
+  --color-ink-line: #273433;
+  --color-paper: #edf0e8;
+  --color-paper-bright: #f8faf2;
+  --color-paper-dim: #c0c7bb;
 
-  /* Accents */
-  --color-gold: #c9a24a;
-  --color-gold-bright: #e2c074;
-  --color-clay: #b23a36;   /* Filipino-flag nod — used sparingly */
-  --color-court: #1c3c63;  /* deep court blue — used sparingly */
+  /* Pickleball energy.
+     NOTE: the historical gold/clay/court tokens now carry the bold palette so
+     existing utilities keep working:
+       gold  = electric court teal (readable accent on light AND dark)
+       clay  = hot flame coral
+       court = deep court teal (backdrops + ambient blooms) */
+  --color-gold: #0ea5a0;
+  --color-gold-bright: #2fe0d4;
+  --color-clay: #ff5436;
+  --color-court: #0a8f8a;
 
-  /* Type */
-  --font-display: var(--font-fraunces), Georgia, serif;
+  /* Signature accents */
+  --color-volt: #c6f500;        /* lime-volt — the pickleball ball */
+  --color-volt-bright: #d8ff3d;
+  --color-aqua: #16c8c2;
+  --color-flame: #ff5436;
+  --color-magenta: #ff2e88;
+
+  /* Type — bold grotesk display, clean grotesk body */
+  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
   --font-sans: var(--font-hanken), "Helvetica Neue", Arial, sans-serif;
 
   /* Motion */
@@ -40,6 +52,8 @@
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  /* belt-and-suspenders: decorative watermarks never trigger sideways scroll */
+  overflow-x: hidden;
 }
 
 body {
@@ -51,20 +65,81 @@ body {
   position: relative;
 }
 
-/* Paper grain — subtle tactile texture over everything */
+/* Film grain — tactile texture floating over the whole site (light + dark) */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 1;
+  z-index: 100;
   pointer-events: none;
-  opacity: 0.5;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.55;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+/* ---- Textured surfaces: gradient blooms + faint court grid behind content ----
+   Applied alongside a bg color; background-image paints above the color,
+   below the element's own content (no stacking headaches). */
+.tex-warm {
+  background-image:
+    radial-gradient(48rem 40rem at 110% -10%, color-mix(in srgb, var(--color-gold) 24%, transparent) 0%, transparent 55%),
+    radial-gradient(42rem 38rem at -12% 115%, color-mix(in srgb, var(--color-clay) 13%, transparent) 0%, transparent 55%),
+    radial-gradient(color-mix(in srgb, var(--color-ink) 9%, transparent) 1px, transparent 1.4px);
+  background-size: auto, auto, 1.4rem 1.4rem;
+  background-position: center, center, center;
+}
+
+.tex-dark {
+  background-image:
+    radial-gradient(46rem 40rem at 105% -5%, color-mix(in srgb, var(--color-gold) 18%, transparent) 0%, transparent 50%),
+    radial-gradient(40rem 38rem at -10% 110%, color-mix(in srgb, var(--color-court) 34%, transparent) 0%, transparent 55%),
+    radial-gradient(color-mix(in srgb, var(--color-paper) 8%, transparent) 1px, transparent 1.4px);
+  background-size: auto, auto, 1.4rem 1.4rem;
+  background-position: center, center, center;
+}
+
+/* ---- Soft section transitions ----
+   Mid-page dark bands use a soft shadow only — NO rounded corners — so a
+   white→black transition in the body of a page reads as a gentle feather, not
+   a stray rounded notch. Rounded shoulders are reserved for the top-of-page
+   transition (page header / ticker) and kept subtle. */
+.panel-soft {
+  box-shadow:
+    0 -14px 44px -30px rgba(20, 18, 13, 0.5),
+    0 14px 44px -30px rgba(20, 18, 13, 0.5);
+}
+.panel-dark-bottom {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 0 22px 50px -46px rgba(20, 18, 13, 0.6);
+}
+@media (min-width: 768px) {
+  .panel-dark-bottom {
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+  }
+}
+
+/* ---- Highlighter mark: volt-lime swipe across keywords in body copy ---- */
+mark.mark,
+.mark {
+  background-color: transparent;
+  background-image: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--color-volt) 88%, transparent) 0,
+    color-mix(in srgb, var(--color-volt) 88%, transparent) 38%,
+    transparent 38%
+  );
+  color: inherit;
+  font-weight: 700;
+  padding: 0 0.06em;
+  border-radius: 0.12em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 ::selection {
-  background: var(--color-gold);
+  background: var(--color-volt);
   color: var(--color-ink);
 }
 
@@ -77,26 +152,27 @@ body::before {
 .eyebrow {
   font-family: var(--font-sans);
   font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.32em;
+  font-weight: 700;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
 }
 
-/* Fluid display headline */
+/* Fluid display headline — heavy, tight, athletic */
 .display-xl {
   font-family: var(--font-display);
-  font-weight: 380;
-  line-height: 0.92;
-  letter-spacing: -0.02em;
-  font-size: clamp(2.75rem, 9vw, 8rem);
+  font-weight: 800;
+  line-height: 0.88;
+  letter-spacing: -0.035em;
+  font-size: clamp(2.85rem, 9.5vw, 8.5rem);
+  text-transform: uppercase;
 }
 
 .display-lg {
   font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 0.98;
-  letter-spacing: -0.015em;
-  font-size: clamp(2.25rem, 5.5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 0.94;
+  letter-spacing: -0.025em;
+  font-size: clamp(2.35rem, 5.8vw, 4.75rem);
 }
 
 /* Thin rule */
@@ -150,6 +226,33 @@ body::before {
   html { scroll-behavior: auto; }
   .rise, .reveal { opacity: 1 !important; transform: none !important; animation: none !important; }
   .hero-drift { animation: none !important; }
+}
+
+/* Marquee ticker */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 32s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* Outlined display text (decorative) */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in srgb, currentColor 45%, transparent);
+}
+
+/* Soft inner card sheen */
+.card-sheen {
+  box-shadow:
+    inset 0 1px 0 0 color-mix(in srgb, white 8%, transparent),
+    0 24px 60px -30px rgba(20, 18, 13, 0.55);
 }
 
 /* Underline link affordance */

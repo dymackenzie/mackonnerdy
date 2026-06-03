@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="relative z-10 bg-paper">
+    <section className="relative z-10 bg-paper tex-warm">
       <Container className="grid gap-16 pb-28 pt-40 md:grid-cols-[1fr_1.2fr] md:pt-48">
         {/* left — info */}
         <Reveal>
@@ -61,7 +61,7 @@ export default function ContactPage() {
         </Reveal>
 
         {/* right — form */}
-        <Reveal delay={120} className="rounded-sm border border-ink/10 bg-paper-bright p-8 md:p-10">
+        <Reveal delay={120} className="card-sheen rounded-3xl border border-ink/10 bg-paper-bright p-8 md:p-10">
           <ContactForm to={site.sponsorshipEmail} />
         </Reveal>
       </Container>

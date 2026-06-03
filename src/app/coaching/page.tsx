@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { Container, CTA, Eyebrow } from "@/components/ui";
 import { coaching } from "@/content/coaching";
@@ -13,35 +14,39 @@ export const metadata: Metadata = {
 export default function CoachingPage() {
   return (
     <>
-      <header className="relative z-10 bg-ink text-paper">
-        <Container className="pb-20 pt-40 md:pb-28 md:pt-48">
-          <Eyebrow className="text-gold">{coaching.eyebrow}</Eyebrow>
-          <h1 className="display-xl mt-6 max-w-4xl text-paper-bright">
-            {coaching.title}
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-paper/70">
-            {coaching.lede}
-          </p>
-        </Container>
-      </header>
+      <PageHeader
+        eyebrow={coaching.eyebrow}
+        title={coaching.title}
+        lede={coaching.lede}
+        watermark="Train"
+        edgeLabel="Coaching & Clinics"
+      />
 
       {/* offerings */}
-      <section className="relative z-10 bg-paper">
+      <section className="relative z-10 bg-paper tex-warm">
         <Container className="py-24 md:py-32">
-          <div className="grid gap-px overflow-hidden rounded-sm border border-ink/10 bg-ink/10 md:grid-cols-3">
-            {coaching.offerings.map((o, i) => (
-              <Reveal
-                key={o.title}
-                delay={i * 100}
-                className="flex flex-col gap-6 bg-paper p-8 md:p-10"
-              >
-                <span className="font-display text-5xl text-gold">0{i + 1}</span>
-                <h2 className="font-display text-2xl leading-tight text-ink">
-                  {o.title}
-                </h2>
-                <p className="text-sm leading-relaxed text-ink/70">{o.body}</p>
-              </Reveal>
-            ))}
+          <div className="grid gap-x-8 gap-y-10 md:grid-cols-3">
+            {coaching.offerings.map((o, i) => {
+              const offset = ["md:mt-0", "md:mt-12", "md:mt-24"][i] ?? "md:mt-0";
+              return (
+                <Reveal
+                  key={o.title}
+                  delay={i * 100}
+                  className={`card-sheen flex flex-col gap-5 rounded-3xl border border-ink/10 bg-paper-bright/80 p-8 md:p-10 ${offset}`}
+                >
+                  <span
+                    aria-hidden
+                    className="select-none font-display text-6xl leading-none text-outline text-gold opacity-70"
+                  >
+                    0{i + 1}
+                  </span>
+                  <h2 className="font-display text-2xl leading-tight text-ink">
+                    {o.title}
+                  </h2>
+                  <p className="text-sm leading-relaxed text-ink/70">{o.body}</p>
+                </Reveal>
+              );
+            })}
           </div>
 
           {/* audience */}
@@ -64,7 +69,7 @@ export default function CoachingPage() {
       </section>
 
       {/* CTA band */}
-      <section className="relative z-10 bg-ink text-paper">
+      <section className="panel-soft relative z-10 bg-ink tex-dark text-paper">
         <Container className="py-24 text-center md:py-32">
           <Reveal>
             <p className="font-display text-xl italic text-gold-bright">
@@ -77,7 +82,7 @@ export default function CoachingPage() {
               <CTA
                 href="/contact"
                 variant="solid"
-                className="bg-gold text-ink hover:bg-gold-bright"
+                className="bg-volt text-ink hover:bg-volt-bright"
               >
                 Book a Session
               </CTA>
