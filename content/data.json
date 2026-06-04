@@ -30,7 +30,7 @@
     "portrait": {
       "image": "/media/portrait/KEN00355.webp",
       "alt": "Portrait of Mackonner Dy",
-      "caption": "Richmond, BC"
+      "caption": "Vancouver, BC"
     },
     "intro": "Mackonner Dy is one of ==Canada's top== junior and emerging ==professional pickleball players==, competing on the PPA Tour, PPA Canada, CNPL, and international events across ==North America and Asia==.",
     "credentials": [
@@ -80,7 +80,7 @@
       },
       {
         "tag": "The Pro Era",
-        "image": "/media/journey/PPA Hanoi 1.webp",
+        "image": "/media/journey/TEXAS001.webp",
         "title": "The Global Stage",
         "body": "The breakthrough came with deep runs in PPA Tour events and international results that caught the attention of the global pickleball community. Whether competing in the high-humidity courts of Asia or the premier venues of North America, Mackonner showed he belonged among the elite."
       }
@@ -126,8 +126,7 @@
       { "event": "Fraser Valley Open 2024", "location": "British Columbia, Canada", "date": "Aug 2024", "result": "Silver", "surface": "Men's 4.5 Doubles" },
       { "event": "Mid-Summer Slam 2024", "location": "British Columbia, Canada", "date": "Jul 2024", "result": "Gold", "surface": "Men's 4.5 Doubles" },
       { "event": "2024 Douglas Park Charity Tournament", "location": "British Columbia, Canada", "date": "Jul 2024", "result": "Gold", "surface": "Men's 4.0 Doubles" },
-      { "event": "WRC Canada Day Classic", "location": "British Columbia, Canada", "date": "Jun 2024", "result": "Gold", "surface": "Men's 4.0 Doubles" },
-      { "event": "Mid-Summer Slam 2024", "location": "British Columbia, Canada", "date": "Jul 2024", "result": "Gold", "surface": "Men's 4.5 Doubles" }
+      { "event": "WRC Canada Day Classic", "location": "British Columbia, Canada", "date": "Jun 2024", "result": "Gold", "surface": "Men's 4.0 Doubles" }
     ],
     "note": "Rankings and results current as of June 2026."
   },
@@ -165,11 +164,12 @@
     },
     "videos": [
       { "title": "PTV Sports Network", "image": "media/press/IMG_3697.webp", "href": "https://www.youtube.com/watch?v=5tT7XemVFRM" },
-      { "title": "PPA Texas Open 2026", "image": "", "href": "https://www.instagram.com/p/DVzYPKgERBq/" },
-      { "title": "Zocker Giveaway", "image": "", "href": "https://www.instagram.com/p/DZC7yrnu2va/" },
-      { "title": "chinoytv", "image": "", "href": "https://www.instagram.com/p/DXilyz8j4Ud/" },
-      { "title": "SM Active Hub", "image": "", "href": "https://www.instagram.com/p/DXDsN91lv1w/" },
-      { "title": "PPA Hanoi 2026", "image": "", "href": "https://www.instagram.com/p/DWvP5xhE0Ql/" }
+      { "title": "PPA Texas Open 2026", "image": "/media/reels/texas_open.webp", "href": "https://www.instagram.com/p/DVzYPKgERBq/" },
+      { "title": "Zocker Giveaway", "image": "/media/reels/zocker_giveaway.webp", "href": "https://www.instagram.com/p/DZC7yrnu2va/" },
+      { "title": "chinoytv", "image": "/media/reels/chinoytv.webp", "href": "https://www.instagram.com/p/DXilyz8j4Ud/" },
+      { "title": "SM Active Hub", "image": "/media/reels/smactive.webp", "href": "https://www.instagram.com/p/DW-g5nyDHtz/" },
+      { "title": "PPA Hanoi 2026", "image": "/media/reels/hanoi.webp", "href": "https://www.instagram.com/p/DWvP5xhE0Ql/" },
+      { "title": "CNPL Interview", "image": "/media/reels/cnpl.webp", "href": "https://www.instagram.com/p/DYQYtlSJLD0/" }
     ],
     "articles": []
   },

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { MediaThumb } from "@/components/MediaThumb";
 import { PageHeader } from "@/components/PageHeader";
 import { Placeholder } from "@/components/Placeholder";
+import { Rail } from "@/components/Rail";
 import { Reveal } from "@/components/Reveal";
 import { SponsorLogo } from "@/components/SponsorLogo";
 import { Chapter, Container, CTA } from "@/components/ui";
@@ -132,7 +133,7 @@ export default function MediaPage() {
         </Container>
 
         {/* centered rail */}
-        <div className="scroll-x mx-auto w-full max-w-6xl gap-3 px-6 pb-12 sm:px-8">
+        <Rail className="cursor-grab gap-3 px-6 pb-12 select-none sm:px-8">
           {media.videos.map((v, i) => (
             <a
               key={`${v.title}-${i}`}
@@ -166,7 +167,7 @@ export default function MediaPage() {
               </div>
             </a>
           ))}
-        </div>
+        </Rail>
       </section>
 
       {/* ---------- 04 · PRESS RAIL (horizontal scroll + see all) ---------- */}
@@ -188,7 +189,7 @@ export default function MediaPage() {
           </Reveal>
         </Container>
 
-        <div className="scroll-x mx-auto w-full max-w-6xl gap-4 px-6 pb-12 sm:px-8">
+        <Rail className="cursor-grab gap-4 px-6 pb-12 select-none sm:px-8">
           {pressRail.map((c, i) => (
             <a
               key={`${c.title}-${i}`}
@@ -215,7 +216,7 @@ export default function MediaPage() {
               </p>
             </a>
           ))}
-        </div>
+        </Rail>
       </section>
 
       {/* ---------- 05 · PARTNERS ---------- */}
