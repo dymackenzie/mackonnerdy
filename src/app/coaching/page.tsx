@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Coaching / Clinics",
   description:
     "Private coaching, group clinics, and appearances with Canadian pickleball champion Mackonner Dy.",
+  alternates: { canonical: "/coaching" },
 };
 
 export default function CoachingPage() {

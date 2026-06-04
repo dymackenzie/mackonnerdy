@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CustomCursor } from "@/components/CustomCursor";
 import { site } from "@/content/site";
+import { personJsonLd } from "@/lib/seo";
 
 // Blocky, technical mono for headlines; clean mono for body — sportswear/brutalist.
 const displayMono = Space_Mono({
@@ -27,12 +28,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mackonnerdy.com"),
+  metadataBase: new URL(site.url),
   title: {
     default: `${site.name} — ${site.role}`,
     template: `%s · ${site.name}`,
   },
   description: site.description,
+  alternates: { canonical: "/" },
   keywords: [
     "Mackonner Dy",
     "pickleball",
@@ -65,6 +67,10 @@ export default function RootLayout({
       className={`${displayMono.variable} ${bodyMono.variable} h-full antialiased`}
     >
       <body className="relative flex min-h-full flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd()) }}
+        />
         <CustomCursor />
         <Header />
         <main className="relative z-10 flex-1">{children}</main>

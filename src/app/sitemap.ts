@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
-import { nav } from "@/content/site";
+import { nav, site } from "@/content/site";
 
-const BASE = "https://mackonnerdy.com";
+const BASE = site.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return nav.map((item) => ({

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Mackonner Dy's journey from the community courts of British Columbia to the professional pickleball world stage — plus results and rankings.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

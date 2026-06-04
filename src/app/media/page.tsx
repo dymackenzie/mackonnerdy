@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "Media & Partners",
   description:
     "Press coverage, match highlights, interviews, and partnership opportunities with Mackonner Dy.",
+  alternates: { canonical: "/media" },
 };
 
 // Featured = first item; the rest feed the horizontal rails.

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Mackonner Dy for sponsorship, coaching, clinics, appearances, and media.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
