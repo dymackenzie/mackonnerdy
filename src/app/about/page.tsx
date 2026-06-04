@@ -26,7 +26,7 @@ export default function AboutPage() {
 
       {/* ---------- PHASE CARDS (staggered) ---------- */}
       <section className="relative z-10 overflow-x-clip bg-paper tex-warm">
-        <Container className="py-24 md:py-32">
+        <Container className="py-14 md:py-20">
           <div className="grid gap-x-10 gap-y-14 md:grid-cols-3">
             {journey.phases.map((phase, i) => {
               // descending staircase offset for an editorial, asymmetric feel
@@ -68,7 +68,7 @@ export default function AboutPage() {
 
       {/* ---------- PULL QUOTE ---------- */}
       <section className="relative z-10 bg-paper-bright tex-warm">
-        <Container className="py-20 md:py-28">
+        <Container className="py-12 md:py-16">
           <Reveal className="mx-auto max-w-4xl text-center">
             <span className="font-display text-6xl leading-none text-gold">“</span>
             <p className="display-lg -mt-6 text-ink">{journey.pullQuote}</p>
@@ -78,8 +78,8 @@ export default function AboutPage() {
 
       {/* ---------- NARRATIVE CHAPTERS (alternating) ---------- */}
       <section className="relative z-10 overflow-x-clip bg-paper tex-warm">
-        <Container className="py-24 md:py-32">
-          <div className="flex flex-col gap-20 md:gap-28">
+        <Container className="py-14 md:py-20">
+          <div className="flex flex-col gap-12 md:gap-16">
             {journey.chapters.map((c, i) => {
               const flip = i % 2 === 1;
               return (
@@ -129,7 +129,7 @@ export default function AboutPage() {
         id="results"
         className="panel-soft relative z-10 scroll-mt-24 bg-ink tex-dark text-paper"
       >
-        <Container className="py-24 md:py-32">
+        <Container className="py-14 md:py-20">
           <Reveal>
             <Eyebrow className="text-gold">{results.eyebrow}</Eyebrow>
             <h2 className="display-lg mt-6 text-paper-bright">{results.title}</h2>

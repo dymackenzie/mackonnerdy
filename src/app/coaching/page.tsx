@@ -24,7 +24,7 @@ export default function CoachingPage() {
 
       {/* offerings */}
       <section className="relative z-10 bg-paper tex-warm">
-        <Container className="py-24 md:py-32">
+        <Container className="py-14 md:py-20">
           <div className="grid gap-x-8 gap-y-10 md:grid-cols-3">
             {coaching.offerings.map((o, i) => {
               const offset = ["md:mt-0", "md:mt-12", "md:mt-24"][i] ?? "md:mt-0";
@@ -70,7 +70,7 @@ export default function CoachingPage() {
 
       {/* CTA band */}
       <section className="panel-soft relative z-10 bg-ink tex-dark text-paper">
-        <Container className="py-24 text-center md:py-32">
+        <Container className="py-14 text-center md:py-20">
           <Reveal>
             <p className="font-display text-xl italic text-gold-bright">
               {site.tagline}

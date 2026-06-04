@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <section className="relative z-10 bg-paper tex-warm">
-      <Container className="grid gap-16 pb-28 pt-40 md:grid-cols-[1fr_1.2fr] md:pt-48">
+      <Container className="grid gap-12 pb-16 pt-28 md:grid-cols-[1fr_1.2fr] md:pt-36">
         {/* left — info */}
         <Reveal>
           <Eyebrow className="text-ink/50">Contact</Eyebrow>

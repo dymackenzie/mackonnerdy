@@ -107,7 +107,7 @@ export default function HomePage() {
 
       {/* ---------- INTRO + PORTRAIT + CREDENTIALS ---------- */}
       <section className="relative z-10 overflow-x-clip bg-paper tex-warm">
-        <Container className="py-24 md:py-32">
+        <Container className="py-14 md:py-20">
           {/* Decorative oversized index */}
           <span
             aria-hidden
@@ -172,7 +172,7 @@ export default function HomePage() {
 
       {/* ---------- STATS BAND ---------- */}
       <section className="panel-soft relative z-10 bg-ink tex-dark text-paper">
-        <Container className="py-20">
+        <Container className="py-12">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {home.stats.map((s, i) => (
               <Reveal
@@ -192,7 +192,7 @@ export default function HomePage() {
 
       {/* ---------- BIO ---------- */}
       <section className="relative z-10 bg-paper tex-warm">
-        <Container className="py-24 md:py-32">
+        <Container className="py-14 md:py-20">
           <div className="grid gap-14 md:grid-cols-[1fr_1.5fr]">
             <Reveal>
               <Eyebrow className="text-ink/50">The Athlete</Eyebrow>
@@ -219,7 +219,7 @@ export default function HomePage() {
 
       {/* ---------- SPONSOR STRIP ---------- */}
       <section className="relative z-10 bg-paper-bright tex-warm">
-        <Container className="py-16">
+        <Container className="py-10">
           <Reveal className="flex flex-col items-center gap-10">
             <Eyebrow className="text-ink/40">Proudly Partnered With</Eyebrow>
             <ul className="flex flex-wrap items-center justify-center gap-4">
@@ -244,7 +244,7 @@ export default function HomePage() {
 
       {/* ---------- CLOSING CTA ---------- */}
       <section className="panel-soft relative z-10 overflow-hidden bg-ink tex-dark text-paper">
-        <Container className="py-28 text-center md:py-36">
+        <Container className="py-16 text-center md:py-24">
           <Reveal>
             <p className="font-display text-xl italic text-gold-bright">
               {site.tagline}

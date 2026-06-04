@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Placeholder } from "./Placeholder";
-import { youtubeThumbnail } from "@/lib/util";
+import { youtubeId } from "@/lib/util";
 
 type Props = {
   /** Preferred poster image (a /media path or any URL). */
@@ -15,12 +15,21 @@ type Props = {
 };
 
 /**
- * Thumbnail that prefers a real poster, then falls back to the YouTube thumbnail
- * (when `href` is a YouTube link), then to the styled court Placeholder.
+ * Thumbnail with a graceful source chain:
+ *   explicit poster → YouTube maxres (1280×720) → YouTube hq → styled Placeholder.
+ * Handles YouTube's quirk where a missing maxres returns a tiny 120px gray frame
+ * (a valid image, so onError never fires) by advancing when naturalWidth is tiny.
  */
 export function MediaThumb({ poster, href, label, tone = "dark", className = "" }: Props) {
-  const yt = youtubeThumbnail(href);
-  const [src, setSrc] = useState<string | undefined>(poster || yt);
+  const id = youtubeId(href);
+  const candidates = [
+    poster || undefined,
+    id ? `https://img.youtube.com/vi/${id}/maxresdefault.jpg` : undefined,
+    id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : undefined,
+  ].filter(Boolean) as string[];
+
+  const [idx, setIdx] = useState(0);
+  const src = candidates[idx];
 
   if (src) {
     return (
@@ -29,8 +38,11 @@ export function MediaThumb({ poster, href, label, tone = "dark", className = "" 
         src={src}
         alt={label ?? ""}
         loading="lazy"
-        // if the poster 404s, try the YouTube thumb next; then give up to Placeholder
-        onError={() => setSrc((cur) => (cur !== yt && yt ? yt : undefined))}
+        onError={() => setIdx((i) => i + 1)}
+        onLoad={(e) => {
+          // YouTube returns a 120×90 gray frame when a resolution is unavailable
+          if (e.currentTarget.naturalWidth <= 120) setIdx((i) => i + 1);
+        }}
         className={`object-cover ${className}`}
       />
     );

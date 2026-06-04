@@ -33,7 +33,7 @@ export function PageHeader({ eyebrow, title, lede, watermark, edgeLabel }: Props
         </span>
       )}
 
-      <Container className="relative z-10 pb-20 pt-40 md:pb-28 md:pt-48">
+      <Container className="relative z-10 pb-12 pt-28 md:pb-16 md:pt-36">
         <Eyebrow className="text-gold">{eyebrow}</Eyebrow>
         <h1 className="display-xl mt-6 max-w-4xl text-paper-bright">{title}</h1>
         {lede && (

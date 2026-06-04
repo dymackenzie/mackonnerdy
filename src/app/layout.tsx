@@ -1,18 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Hanken_Grotesk } from "next/font/google";
+import { Space_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { CustomCursor } from "@/components/CustomCursor";
 import { site } from "@/content/site";
 
-const archivo = Archivo({
-  variable: "--font-archivo",
+// Blocky, technical mono for headlines; clean mono for body — sportswear/brutalist.
+const displayMono = Space_Mono({
+  variable: "--font-display-mono",
   subsets: ["latin"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
-const hanken = Hanken_Grotesk({
-  variable: "--font-hanken",
+const bodyMono = JetBrains_Mono({
+  variable: "--font-body-mono",
   subsets: ["latin"],
   display: "swap",
 });
@@ -59,9 +62,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${archivo.variable} ${hanken.variable} h-full antialiased`}
+      className={`${displayMono.variable} ${bodyMono.variable} h-full antialiased`}
     >
       <body className="relative flex min-h-full flex-col">
+        <CustomCursor />
         <Header />
         <main className="relative z-10 flex-1">{children}</main>
         <Footer />

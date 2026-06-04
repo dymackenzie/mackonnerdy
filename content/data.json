@@ -8,9 +8,7 @@
     "sponsorshipContactName": "Dr. Sean Graham",
     "sponsorshipEmail": "satoripickleball@gmail.com",
     "socials": [
-      { "label": "Instagram", "href": "https://instagram.com/" },
-      { "label": "TikTok", "href": "https://tiktok.com/" },
-      { "label": "YouTube", "href": "https://youtube.com/" }
+      { "label": "Instagram", "href": "https://www.instagram.com/mackonner_pb/" }
     ]
   },
 
@@ -163,10 +161,10 @@
     "title": "Partner With Mackonner Dy",
     "lede": "Mackonner is currently seeking long-term brand partners who want to reach engaged audiences across Canada, North America, and Asia.",
     "current": [
-      { "name": "Zocker", "note": "Primary Sponsor", "logo": "/media/sponsors/zocker.svg" },
-      { "name": "Satori Pickleball", "note": "Partner", "logo": "/media/sponsors/satori.svg" },
-      { "name": "Love Crunch", "note": "Partner", "logo": "/media/sponsors/love-crunch.svg" },
-      { "name": "Dink", "note": "Partner", "logo": "/media/sponsors/dink.svg" }
+      { "name": "Zocker", "note": "Primary Sponsor", "logo": "/media/sponsors/zocker.png" },
+      { "name": "Satori Pickleball", "note": "Partner", "logo": "/media/sponsors/satori.png" },
+      { "name": "Love Crunch", "note": "Partner", "logo": "/media/sponsors/lovecrunch.png" },
+      { "name": "Dink", "note": "Partner", "logo": "/media/sponsors/dink.png" }
     ],
     "categories": [
       "Pickleball Equipment",

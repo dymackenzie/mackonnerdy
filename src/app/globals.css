@@ -2,7 +2,7 @@
 
 /* =========================================================================
    Mackonner Dy — brand system
-   Editorial-athletic: warm ink + bone paper, gold accent, soulful serif.
+   Brutalist sportswear: court-black + volt-lime, blocky mono type, zero radius.
    ========================================================================= */
 
 @theme {
@@ -32,9 +32,9 @@
   --color-flame: #ff5436;
   --color-magenta: #ff2e88;
 
-  /* Type — bold grotesk display, clean grotesk body */
-  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
-  --font-sans: var(--font-hanken), "Helvetica Neue", Arial, sans-serif;
+  /* Type — blocky display mono + clean body mono */
+  --font-display: var(--font-display-mono), ui-monospace, "Courier New", monospace;
+  --font-sans: var(--font-body-mono), ui-monospace, "Courier New", monospace;
 
   /* Motion */
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
@@ -60,9 +60,73 @@ body {
   background-color: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  font-feature-settings: "ss01", "cv01";
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   position: relative;
+}
+
+/* ---- Blocky: kill every rounded corner site-wide (sportswear/brutalist) ---- */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+/* ---- Custom cursor (fine-pointer devices only) ---- */
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  will-change: transform;
+}
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-volt);
+  opacity: 0;
+}
+.cursor-ring {
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid var(--color-volt);
+  opacity: 0;
+  transition: width 0.18s var(--ease-out-soft), height 0.18s var(--ease-out-soft),
+    background-color 0.18s var(--ease-out-soft);
+}
+.cursor-ring.is-hover {
+  width: 52px;
+  height: 52px;
+  background: color-mix(in srgb, var(--color-volt) 18%, transparent);
+}
+.cursor-ring.is-down {
+  width: 22px;
+  height: 22px;
+}
+
+/* ---- Horizontal scroll rails (videos / press) ---- */
+.scroll-x {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior-x: contain;
+}
+.scroll-x::-webkit-scrollbar {
+  display: none;
+}
+.scroll-x > * {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
 }
 
 /* Film grain — tactile texture floating over the whole site (light + dark) */
@@ -151,28 +215,29 @@ mark.mark,
 
 .eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
-/* Fluid display headline — heavy, tight, athletic */
+/* Fluid display headline — heavy blocky mono, tight, athletic */
 .display-xl {
   font-family: var(--font-display);
-  font-weight: 800;
-  line-height: 0.88;
-  letter-spacing: -0.035em;
-  font-size: clamp(2.85rem, 9.5vw, 8.5rem);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  font-size: clamp(2rem, 6vw, 5.25rem);
   text-transform: uppercase;
 }
 
 .display-lg {
   font-family: var(--font-display);
-  font-weight: 800;
-  line-height: 0.94;
-  letter-spacing: -0.025em;
-  font-size: clamp(2.35rem, 5.8vw, 4.75rem);
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  font-size: clamp(1.7rem, 4vw, 3.25rem);
+  text-transform: uppercase;
 }
 
 /* Thin rule */
