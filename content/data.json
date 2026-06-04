@@ -28,9 +28,9 @@
     "heroVideoPoster": "",
     "heroPosterAlt": "Mackonner Dy competing on a pickleball court",
     "portrait": {
-      "image": "/media/portrait/mackonner.jpg",
+      "image": "/media/portrait/KEN00355.webp",
       "alt": "Portrait of Mackonner Dy",
-      "caption": "Vancouver, BC"
+      "caption": "Richmond, BC"
     },
     "intro": "Mackonner Dy is one of ==Canada's top== junior and emerging ==professional pickleball players==, competing on the PPA Tour, PPA Canada, CNPL, and international events across ==North America and Asia==.",
     "credentials": [
@@ -41,13 +41,13 @@
     "bio": {
       "heading": "Grounded. Creative. Relentless.",
       "body": [
-        "==National Champion in Men's Singles== and ranked ==Top 5 in Canada== in Men's Doubles (PPA Canada), with a ==global PPA ranking of 214==.",
+        "==National Champion in Men's Singles== and ranked ==Top 5 in Canada== in Men's Doubles (PPA Canada), with a ==global PPA ranking of 220==.",
         "Known for his ==athleticism, creativity, and quick hands==, he plays a dynamic, unpredictable style. He recently reached the ==Round of 16 at the 2026 PPA Texas Open==, showing he can compete at the highest level, and continues to develop as a member of the ==Vancouver Owls (CNPL)==.",
         "Off the court, Mackonner is grounded and marketable, proudly representing his ==Filipino heritage== while helping grow pickleball in ==Canada and across Asia==."
       ]
     },
     "stats": [
-      { "value": "214", "label": "Global PPA Ranking" },
+      { "value": "220", "label": "Global PPA Ranking" },
       { "value": "Top 5", "label": "Canada · Men's Doubles" },
       { "value": "R16", "label": "2026 PPA Texas Open" },
       { "value": "#1", "label": "Canadian Singles Champion" }
@@ -56,7 +56,7 @@
       "Canadian Singles National Champion",
       "PPA Tour Competitor",
       "Vancouver Owls · CNPL",
-      "Global PPA Rank 214",
+      "Global PPA Rank 220",
       "Play With Purpose. Compete With Faith."
     ]
   },
@@ -68,19 +68,19 @@
     "phases": [
       {
         "tag": "The Beginning",
-        "image": "/media/journey/IMG_2448.JPG",
+        "image": "/media/journey/KEN00412.webp",
         "title": "The Spark: Early Life and First Exposure",
         "body": "Mackonner Dy's athletic story didn't start in a stadium, but in the community courts of British Columbia. His first exposure to pickleball was a moment of instant connection — while other kids focused on traditional team sports, Mackonner found a unique rhythm in the fast-paced, high-finesse world of the paddle. What began as a family pastime quickly transformed into an obsession."
       },
       {
         "tag": "Rising Through the Ranks",
-        "image": "/media/journey/IMG_5903.JPG",
+        "image": "/media/journey/SUNSET_3.webp",
         "title": "Climbing the Ladder",
         "body": "As his skills sharpened, so did his ambition. Mackonner began dominating local junior circuits, quickly outgrowing his age brackets. He traveled across Canada and the United States, earning a reputation as a 'court rat' — someone who lived and breathed the game. Each victory served as a stepping stone, proving his creativity and quick hands were world-class assets."
       },
       {
         "tag": "The Pro Era",
-        "image": "/media/journey/4B75FA05-ED40-4487-9548-42EEC8A9EE6F.PNG",
+        "image": "/media/journey/PPA Hanoi 1.webp",
         "title": "The Global Stage",
         "body": "The breakthrough came with deep runs in PPA Tour events and international results that caught the attention of the global pickleball community. Whether competing in the high-humidity courts of Asia or the premier venues of North America, Mackonner showed he belonged among the elite."
       }
@@ -105,18 +105,31 @@
   "results": {
     "eyebrow": "Results & Rankings",
     "title": "On the Board",
-    "note": "Placeholder results — swap in verified tournament data as the season progresses.",
     "rankings": [
-      { "label": "PPA Global Ranking", "value": "214" },
+      { "label": "PPA Global Ranking", "value": "220" },
       { "label": "Canada · Men's Doubles (PPA Canada)", "value": "Top 5" },
-      { "label": "Canada · Men's Singles", "value": "National Champion" }
+      { "label": "Canada · Men's Singles", "value": "National Champion" },
+      { "label": "CNPL — Vancouver Owls", "value": "Roster" }
     ],
     "tournaments": [
-      { "event": "PPA Texas Open", "location": "Texas, USA", "date": "2026", "result": "Round of 16", "surface": "Singles" },
-      { "event": "Canadian National Championships", "location": "Canada", "date": "2025", "result": "Champion", "surface": "Men's Singles" },
-      { "event": "PPA Canada", "location": "Canada", "date": "2025", "result": "Top 5", "surface": "Men's Doubles" },
-      { "event": "CNPL — Vancouver Owls", "location": "Canada", "date": "2025–26", "result": "Roster", "surface": "Team" }
-    ]
+      { "event": "2026 APA - The Western Open", "location": "Alberta, Canada", "date": "Apr 2026", "result": "Gold", "surface": "Men's Open Singles & Doubles" },
+      { "event": "2026 Washington Open", "location": "Washington, USA", "date": "Mar 2026", "result": "Bronze", "surface": "Men's Open Doubles" },
+      { "event": "PPA Texas Open", "location": "Texas, USA", "date": "Mar 2026", "result": "R16", "surface": "Men's Open Doubles" },
+      { "event": "2025 Side Out Slam", "location": "Washington, USA", "date": "Dec 2025", "result": "Bronze", "surface": "Men's Open Doubles" },
+      { "event": "2025 Grip 'n Rip", "location": "British Columbia, Canada", "date": "Aug 2025", "result": "Gold", "surface": "Men's Open Doubles" },
+      { "event": "2025 Myoflex Canadian National Championship", "location": "Manitoba, Canada", "date": "Aug 2025", "result": "Gold", "surface": "Men's Open Singles" },
+      { "event": "2025 Douglas Park Charity Tournament", "location": "British Columbia, Canada", "date": "Jul 2025", "result": "Silver", "surface": "Men's Open Doubles" },
+      { "event": "2025 Shake & Bake", "location": "British Columbia, Canada", "date": "Jun 2025", "result": "Gold", "surface": "Men's Open Doubles" },
+      { "event": "2024 ETC Pickleball Smash", "location": "British Columbia, Canada", "date": "Dec 2024", "result": "Silver", "surface": "Men's Open Doubles" },
+      { "event": "2024 Grip 'n Rip", "location": "British Columbia, Canada", "date": "Sep 2024", "result": "Gold", "surface": "Men's 4.5 Doubles" },
+      { "event": "2024 Golden Ears Pickleball Club Summer Classic", "location": "British Columbia, Canada", "date": "Aug 2024", "result": "Gold", "surface": "Men's 4.0 Doubles" },
+      { "event": "Fraser Valley Open 2024", "location": "British Columbia, Canada", "date": "Aug 2024", "result": "Silver", "surface": "Men's 4.5 Doubles" },
+      { "event": "Mid-Summer Slam 2024", "location": "British Columbia, Canada", "date": "Jul 2024", "result": "Gold", "surface": "Men's 4.5 Doubles" },
+      { "event": "2024 Douglas Park Charity Tournament", "location": "British Columbia, Canada", "date": "Jul 2024", "result": "Gold", "surface": "Men's 4.0 Doubles" },
+      { "event": "WRC Canada Day Classic", "location": "British Columbia, Canada", "date": "Jun 2024", "result": "Gold", "surface": "Men's 4.0 Doubles" },
+      { "event": "Mid-Summer Slam 2024", "location": "British Columbia, Canada", "date": "Jul 2024", "result": "Gold", "surface": "Men's 4.5 Doubles" }
+    ],
+    "note": "Rankings and results current as of June 2026."
   },
 
   "media": {
@@ -125,13 +138,23 @@
     "press": [
       { 
         "title": "Canadian Pro Mackonner Dy Headlines SM Active Hub Anniversary Pickleball Tour", 
-        "image": "/media/press/IMG_0421.jpg", 
+        "image": "/media/press/IMG_3699.webp", 
         "href": "https://www.smsupermalls.com/whats-new/lifestyle/canadian-pro-mackonner-dy-headlines-sm-active-hub-anniversary-pickleball-tour"
       },
       { 
         "title": "Richmond Teen Pickleball Player Wins Gold at Nationals", 
-        "image": "/media/press/IMG_0451.jpg", 
+        "image": "/media/press/IMG_5903.webp", 
         "href": "https://www.richmond-news.com/local-sports/richmond-bc-15-year-old-pickleball-player-win-gold-at-nationals-11193444" 
+      },
+      { 
+        "title": "What a 16-Year-Old Pickleball Champion Taught Us at SM City Bicutan", 
+        "image": "/media/press/DSC_9831.webp", 
+        "href": "https://www.shinemagazine.asia/post/what-a-16-year-old-pickleball-champion-taught-us-at-sm-city-bicutan" 
+      },
+      { 
+        "title": "Why Aren't There More Pickleball Courts in Richmond? Players Say It's Time for Action", 
+        "image": "/media/press/PICKLE_001.webp", 
+        "href": "https://www.richmond-news.com/local-sports/why-arent-there-more-pickleball-courts-in-richmond-players-11040790" 
       }
     ],
     "highlight": {
@@ -141,19 +164,14 @@
       "href": "https://www.youtube.com/watch?v=N6mrk8iwPg8"
     },
     "videos": [
-      { "title": "Interview", "image": "", "href": "https://www.youtube.com/watch?v=5tT7XemVFRM" },
-      { "title": "Feature", "image": "", "href": "https://www.youtube.com/watch?v=h9ylzTgASNE" },
-      { "title": "On Tour", "image": "", "href": "https://www.youtube.com/watch?v=V6sX3cxc4hI" }
+      { "title": "PTV Sports Network", "image": "media/press/IMG_3697.webp", "href": "https://www.youtube.com/watch?v=5tT7XemVFRM" },
+      { "title": "PPA Texas Open 2026", "image": "", "href": "https://www.instagram.com/p/DVzYPKgERBq/" },
+      { "title": "Zocker Giveaway", "image": "", "href": "https://www.instagram.com/p/DZC7yrnu2va/" },
+      { "title": "chinoytv", "image": "", "href": "https://www.instagram.com/p/DXilyz8j4Ud/" },
+      { "title": "SM Active Hub", "image": "", "href": "https://www.instagram.com/p/DXDsN91lv1w/" },
+      { "title": "PPA Hanoi 2026", "image": "", "href": "https://www.instagram.com/p/DWvP5xhE0Ql/" }
     ],
-    "training": [
-      { "title": "Training Session", "image": "/media/press/DSC_9542_Original.JPG" },
-      { "title": "PPA Hanoi", "image": "/media/press/PPA Hanoi 2.JPG" }
-    ],
-    "articles": [
-      { "date": "April 2026", "source": "Shine", "href": "https://www.shinemagazine.asia/post/what-a-16-year-old-pickleball-champion-taught-us-at-sm-city-bicutan" },
-      { "date": "August 2025", "source": "Richmond News", "href": "https://www.richmond-news.com/local-sports/why-arent-there-more-pickleball-courts-in-richmond-players-11040790" }
-    ],
-    "sponsorContentNote": "Sponsor content — coming soon."
+    "articles": []
   },
 
   "sponsors": {

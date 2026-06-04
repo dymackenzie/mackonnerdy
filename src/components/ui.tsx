@@ -31,6 +31,29 @@ export function Eyebrow({
   );
 }
 
+/* ---- Chapter marker ----
+   Wayfinding for each section: a chapter number + title + rule. This is what
+   differentiates sections now that every band shares one background color. */
+export function Chapter({
+  index,
+  title,
+  className = "",
+}: {
+  index: string;
+  title: string;
+  className?: string;
+}) {
+  return (
+    <div className={`flex items-center gap-4 ${className}`}>
+      <span className="font-display text-sm font-semibold leading-none tracking-[0.1em] text-gold">
+        {index}
+      </span>
+      <span className="eyebrow text-ink/55">{title}</span>
+      <span className="h-px flex-1 bg-ink/10" />
+    </div>
+  );
+}
+
 /* ---- Button / CTA ---- */
 type BtnProps = {
   href: string;
@@ -48,10 +71,12 @@ export function CTA({
   external = false,
 }: BtnProps) {
   const base =
-    "group inline-flex items-center gap-2.5 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300";
+    "group inline-flex items-center gap-2.5 px-6 py-3 text-xs font-semibold uppercase tracking-[0.12em] transition-all duration-300";
   const styles = {
+    // Always-legible fill: dark ink + bright paper. Lime is reserved for the
+    // little accent tick so button text never sits on a low-contrast color.
     solid:
-      "bg-ink text-paper-bright hover:bg-ink-soft hover:gap-3.5 shadow-[0_8px_30px_-12px_rgba(20,18,13,0.6)]",
+      "bg-ink text-paper-bright hover:bg-ink-soft hover:gap-3.5",
     outline:
       "border border-ink/25 text-ink hover:border-ink/60 hover:gap-3.5",
     ghost: "text-ink/70 hover:text-ink hover:gap-3.5",
@@ -59,6 +84,9 @@ export function CTA({
 
   const inner = (
     <>
+      {variant === "solid" && (
+        <span className="h-1.5 w-1.5 shrink-0 bg-volt" aria-hidden />
+      )}
       {children}
       <span className="transition-transform duration-300 group-hover:translate-x-0.5">
         →

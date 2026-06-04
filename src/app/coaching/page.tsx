@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
-import { Container, CTA, Eyebrow } from "@/components/ui";
+import { Chapter, Container, CTA, Eyebrow } from "@/components/ui";
 import { coaching } from "@/content/coaching";
 import { site } from "@/content/site";
 
@@ -22,25 +22,26 @@ export default function CoachingPage() {
         edgeLabel="Coaching & Clinics"
       />
 
-      {/* offerings */}
-      <section className="relative z-10 bg-paper tex-warm">
+      {/* ---------- 01 · OFFERINGS ---------- */}
+      <section className="relative z-10 border-t border-ink/10 bg-paper tex-warm">
         <Container className="py-14 md:py-20">
-          <div className="grid gap-x-8 gap-y-10 md:grid-cols-3">
+          <Chapter index="01" title="What's On Offer" />
+          <div className="mt-12 grid gap-x-8 gap-y-10 md:grid-cols-3">
             {coaching.offerings.map((o, i) => {
               const offset = ["md:mt-0", "md:mt-12", "md:mt-24"][i] ?? "md:mt-0";
               return (
                 <Reveal
                   key={o.title}
                   delay={i * 100}
-                  className={`card-sheen flex flex-col gap-5 rounded-3xl border border-ink/10 bg-paper-bright/80 p-8 md:p-10 ${offset}`}
+                  className={`card-sheen flex flex-col gap-4 border border-ink/10 bg-paper-bright/70 p-7 md:p-8 ${offset}`}
                 >
                   <span
                     aria-hidden
-                    className="select-none font-display text-6xl leading-none text-outline text-gold opacity-70"
+                    className="select-none font-display text-5xl leading-none text-outline text-gold opacity-70"
                   >
                     0{i + 1}
                   </span>
-                  <h2 className="font-display text-2xl leading-tight text-ink">
+                  <h2 className="font-display text-xl leading-tight text-ink">
                     {o.title}
                   </h2>
                   <p className="text-sm leading-relaxed text-ink/70">{o.body}</p>
@@ -57,7 +58,7 @@ export default function CoachingPage() {
                 {coaching.audience.map((a) => (
                   <li
                     key={a}
-                    className="rounded-full border border-ink/20 px-4 py-2 text-sm text-ink/75"
+                    className="border border-ink/20 px-4 py-2 text-sm text-ink/75"
                   >
                     {a}
                   </li>
@@ -68,22 +69,19 @@ export default function CoachingPage() {
         </Container>
       </section>
 
-      {/* CTA band */}
-      <section className="panel-soft relative z-10 bg-ink tex-dark text-paper">
-        <Container className="py-14 text-center md:py-20">
-          <Reveal>
-            <p className="font-display text-xl italic text-gold-bright">
+      {/* ---------- 02 · CTA BAND ---------- */}
+      <section className="relative z-10 border-t border-ink/10 bg-paper tex-warm">
+        <Container className="py-16 md:py-20">
+          <Chapter index="02" title="Book Mackonner" />
+          <Reveal className="mt-10 text-center">
+            <p className="font-display text-base italic text-gold">
               {site.tagline}
             </p>
-            <h2 className="display-lg mx-auto mt-6 max-w-2xl text-paper-bright">
+            <h2 className="display-lg mx-auto mt-5 max-w-2xl text-ink">
               Bring a champion&apos;s mindset to your court.
             </h2>
-            <div className="mt-10 flex justify-center">
-              <CTA
-                href="/contact"
-                variant="solid"
-                className="bg-volt text-ink hover:bg-volt-bright"
-              >
+            <div className="mt-9 flex justify-center">
+              <CTA href="/contact" variant="solid">
                 Book a Session
               </CTA>
             </div>

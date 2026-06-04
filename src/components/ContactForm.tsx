@@ -79,8 +79,9 @@ export function ContactForm({ to }: { to: string }) {
 
       <button
         type="submit"
-        className="group inline-flex w-fit items-center gap-2.5 rounded-full bg-ink px-8 py-4 text-sm font-semibold text-paper-bright transition-all duration-300 hover:gap-3.5"
+        className="group inline-flex w-fit items-center gap-2.5 bg-ink px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.12em] text-paper-bright transition-all duration-300 hover:gap-3.5"
       >
+        <span className="h-1.5 w-1.5 shrink-0 bg-volt" aria-hidden />
         Send Message
         <span className="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
       </button>

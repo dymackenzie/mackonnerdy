@@ -20,9 +20,13 @@ export function Header() {
   // Close mobile menu on route change
   useEffect(() => setOpen(false), [pathname]);
 
-  const solid = scrolled || open;
-  // Over the dark hero/page header (not yet scrolled) the bar is transparent, so
-  // its content must be light to stay visible; once solid (paper) it goes dark.
+  // Only the home page has a dark video hero behind the bar; every other page
+  // now opens on the light paper background, so the bar must read dark there
+  // from the very top.
+  const overHero = pathname === "/";
+  const solid = scrolled || open || !overHero;
+  // Over the dark hero (not yet scrolled) the bar is transparent, so its content
+  // must be light to stay visible; once solid (paper) it goes dark.
   const bar = solid ? "bg-ink" : "bg-paper";
 
   return (

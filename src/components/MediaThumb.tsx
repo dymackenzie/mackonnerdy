@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { InstagramThumb } from "./InstagramThumb";
 import { Placeholder } from "./Placeholder";
-import { youtubeId } from "@/lib/util";
+import { instagramShortcode, youtubeId } from "@/lib/util";
 
 type Props = {
   /** Preferred poster image (a /media path or any URL). */
@@ -46,6 +47,12 @@ export function MediaThumb({ poster, href, label, tone = "dark", className = "" 
         className={`object-cover ${className}`}
       />
     );
+  }
+
+  // No image resolved — Instagram links get a drawn IG-branded thumb, since
+  // Instagram blocks thumbnail hotlinking. Everything else gets the court placeholder.
+  if (instagramShortcode(href)) {
+    return <InstagramThumb label={label} className={className} />;
   }
 
   return <Placeholder label={label} tone={tone} className={className} />;

@@ -1,4 +1,4 @@
-import { Container, Eyebrow } from "./ui";
+import { Chapter, Container } from "./ui";
 
 type Props = {
   eyebrow: string;
@@ -10,15 +10,15 @@ type Props = {
   edgeLabel?: string;
 };
 
-/** Bold editorial page header — dark, textured, with a grid-breaking watermark. */
+/** Editorial page header — light, textured, with a grid-breaking watermark. */
 export function PageHeader({ eyebrow, title, lede, watermark, edgeLabel }: Props) {
   return (
-    <header className="panel-dark-bottom relative z-10 overflow-x-clip bg-ink tex-dark text-paper">
+    <header className="relative z-10 overflow-x-clip bg-paper tex-warm text-ink">
       {watermark && (
         <span
           aria-hidden
-          className="pointer-events-none absolute -right-[2vw] bottom-[-3vw] z-0 select-none font-display font-light leading-none text-outline text-gold opacity-[0.16]"
-          style={{ fontSize: "clamp(7rem, 22vw, 20rem)" }}
+          className="pointer-events-none absolute -right-[2vw] bottom-[-3vw] z-0 select-none font-display font-light leading-none text-outline text-ink opacity-[0.06]"
+          style={{ fontSize: "clamp(6rem, 18vw, 16rem)" }}
         >
           {watermark}
         </span>
@@ -27,17 +27,17 @@ export function PageHeader({ eyebrow, title, lede, watermark, edgeLabel }: Props
       {edgeLabel && (
         <span
           aria-hidden
-          className="absolute right-5 top-1/2 z-10 hidden origin-center -translate-y-1/2 rotate-90 whitespace-nowrap text-paper/35 lg:block"
+          className="absolute right-5 top-1/2 z-10 hidden origin-center -translate-y-1/2 rotate-90 whitespace-nowrap text-ink/30 lg:block"
         >
           <span className="eyebrow">{edgeLabel}</span>
         </span>
       )}
 
-      <Container className="relative z-10 pb-12 pt-28 md:pb-16 md:pt-36">
-        <Eyebrow className="text-gold">{eyebrow}</Eyebrow>
-        <h1 className="display-xl mt-6 max-w-4xl text-paper-bright">{title}</h1>
+      <Container className="relative z-10 pb-12 pt-28 md:pb-14 md:pt-32">
+        <Chapter index="00" title={eyebrow} className="max-w-xl" />
+        <h1 className="display-xl mt-7 max-w-3xl text-ink">{title}</h1>
         {lede && (
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-paper/70">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink/65">
             {lede}
           </p>
         )}

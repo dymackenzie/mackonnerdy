@@ -41,3 +41,15 @@ export function youtubeThumbnail(url?: string): string | undefined {
   const id = youtubeId(url);
   return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : undefined;
 }
+
+/**
+ * Pull the shortcode out of an Instagram post/reel/tv URL (/p/, /reel/, /tv/).
+ * Returns undefined for non-Instagram URLs. Instagram blocks thumbnail
+ * hotlinking (needs an oEmbed access token), so we draw a branded thumb instead
+ * of fetching the real frame — see <InstagramThumb>.
+ */
+export function instagramShortcode(url?: string): string | undefined {
+  if (!url) return undefined;
+  const m = url.match(/instagram\.com\/(?:p|reel|tv)\/([\w-]+)/);
+  return m?.[1];
+}
