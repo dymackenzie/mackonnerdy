@@ -230,17 +230,17 @@ export default function HomePage() {
           <Chapter index="04" title="Partners" />
           <Reveal className="mt-10 flex flex-col items-center gap-8">
             <Eyebrow className="text-ink/40">Proudly Partnered With</Eyebrow>
-            <ul className="flex flex-wrap items-center justify-center gap-4">
+            <ul className="flex flex-wrap items-center justify-center gap-5">
               {sponsors.current.map((s) => (
                 <li
                   key={s.name}
-                  className="flex flex-col items-center gap-1 border border-ink/15 bg-paper-bright/60 px-6 py-3.5 text-center transition-colors hover:border-gold/50"
+                  className="flex flex-col items-center gap-1.5 border border-ink/15 bg-paper-bright/60 px-9 py-5 text-center transition-colors hover:border-gold/50"
                 >
                   <SponsorLogo
                     name={s.name}
                     logo={s.logo}
-                    imgClassName="h-7 w-auto max-w-[10rem] object-contain"
-                    textClassName="font-display text-xl text-ink/85"
+                    imgClassName="h-11 w-auto max-w-[13rem] object-contain"
+                    textClassName="font-display text-2xl text-ink/85"
                   />
                   <p className="eyebrow text-ink/35">{s.note}</p>
                 </li>

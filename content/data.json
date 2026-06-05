@@ -175,6 +175,17 @@
     "articles": []
   },
 
+  "team": {
+    "eyebrow": "Behind the Player",
+    "title": "Mackonner's Team",
+    "lede": "Every champion is backed by people who believe in the mission. These are the people in Mackonner's corner.",
+    "members": [
+      { "name": "Dr. Sean Graham", "role": "Coach. Fitness.", "image": "/media/team/sean.webp", "focus": "center top" },
+      { "name": "Dr. Jeffrey Lee", "role": "Coach. Wellness.", "image": "/media/team/jeffrey.webp", "focus": "center 30%" },
+      { "name": "Allan Florendo", "role": "Coach. Community.", "image": "/media/team/alan.webp", "focus": "center" }
+    ]
+  },
+
   "sponsors": {
     "eyebrow": "Sponsors & Partners",
     "title": "Partner With Mackonner Dy",
@@ -182,6 +193,7 @@
     "current": [
       { "name": "Zocker", "note": "Primary Sponsor", "logo": "/media/sponsors/zocker.png" },
       { "name": "Satori Pickleball", "note": "Partner", "logo": "/media/sponsors/satori.png" },
+      { "name": "Brio Health", "note": "Partner", "logo": "/media/sponsors/briohealth.webp" },
       { "name": "Love Crunch", "note": "Partner", "logo": "/media/sponsors/lovecrunch.png" },
       { "name": "Dink", "note": "Partner", "logo": "/media/sponsors/dink.png" }
     ],

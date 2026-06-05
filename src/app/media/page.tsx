@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { MediaThumb } from "@/components/MediaThumb";
 import { PageHeader } from "@/components/PageHeader";
 import { Placeholder } from "@/components/Placeholder";
@@ -8,6 +9,7 @@ import { SponsorLogo } from "@/components/SponsorLogo";
 import { Chapter, Container, CTA } from "@/components/ui";
 import { media } from "@/content/media";
 import { sponsors } from "@/content/sponsors";
+import { team } from "@/content/team";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -303,6 +305,59 @@ export default function MediaPage() {
               Partner With Mackonner
             </CTA>
           </Reveal>
+        </Container>
+      </section>
+
+      {/* ---------- 06 · THE TEAM ---------- */}
+      <section className="relative z-10 overflow-x-clip border-t border-ink/10 bg-paper tex-warm">
+        <Container className="py-10 md:py-14">
+          <Chapter index="06" title={team.eyebrow} />
+          <Reveal className="mt-6">
+            <h2 className="font-display text-2xl uppercase leading-tight text-ink sm:text-3xl">
+              {team.title}
+            </h2>
+            <p className="mt-3 max-w-xl text-sm text-ink/70">{team.lede}</p>
+          </Reveal>
+
+          <div className="mt-8 grid max-w-2xl gap-x-5 gap-y-6 sm:grid-cols-3">
+            {team.members.map((m, i) => (
+              <Reveal
+                key={m.name}
+                delay={i * 100}
+                as="article"
+                className="group flex flex-col"
+              >
+                <div className="relative aspect-square overflow-hidden border border-ink/10 bg-ink">
+                  {m.image ? (
+                    <Image
+                      src={m.image}
+                      alt={m.name}
+                      fill
+                      sizes="(min-width: 640px) 220px, 100vw"
+                      style={{ objectPosition: m.focus ?? "center" }}
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <Placeholder
+                      label={m.name}
+                      tone="dark"
+                      className="h-full w-full transition-transform duration-700 group-hover:scale-105"
+                    />
+                  )}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -bottom-1 left-2 select-none font-display text-4xl leading-none text-outline text-paper/70"
+                  >
+                    0{i + 1}
+                  </span>
+                </div>
+                <p className="eyebrow mt-3 text-gold">{m.role}</p>
+                <h3 className="mt-1 font-display text-base uppercase leading-tight text-ink">
+                  {m.name}
+                </h3>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
     </>
