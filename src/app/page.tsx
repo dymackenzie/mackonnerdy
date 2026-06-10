@@ -239,6 +239,7 @@ export default function HomePage() {
                   <SponsorLogo
                     name={s.name}
                     logo={s.logo}
+                    url={s.url}
                     imgClassName="h-11 w-auto max-w-[13rem] object-contain"
                     textClassName="font-display text-2xl text-ink/85"
                   />

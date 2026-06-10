@@ -244,6 +244,7 @@ export default function MediaPage() {
                 <SponsorLogo
                   name={s.name}
                   logo={s.logo}
+                  url={s.url}
                   imgClassName="h-8 w-auto max-w-[11rem] object-contain"
                   textClassName="font-display text-lg uppercase text-ink"
                 />
