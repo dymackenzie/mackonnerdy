@@ -5,7 +5,7 @@
     "tagline": "Play With Purpose. Compete With Faith.",
     "role": "Professional Pickleball Player",
     "location": "Vancouver, Canada",
-    "description": "Mackonner Dy is one of Canada's top junior and emerging professional pickleball players, competing on the PPA Tour, PPA Canada, CNPL, and international events across North America and Asia.",
+    "description": "Mackonner Dy is one of Canada's top junior and emerging professional pickleball players, competing on the PPA Tour, PPA Canada, CNPL, APA, and international events across North America and Asia.",
     "sponsorshipContactName": "Dr. Sean Graham",
     "sponsorshipEmail": "satoripickleball@gmail.com",
     "socials": [
@@ -194,8 +194,7 @@
       { "name": "Zocker", "note": "Primary Sponsor", "logo": "/media/sponsors/zocker.png", "url": "https://zocker.ca/" },
       { "name": "Satori Pickleball", "note": "Partner", "logo": "/media/sponsors/satori.png", "url": "https://www.satoriintegrativehealth.com/pickleball-coaching.html" },
       { "name": "Brio Health", "note": "Partner", "logo": "/media/sponsors/briohealth.webp", "url": "https://yourbriohealth.com/" },
-      { "name": "Love Crunch", "note": "Partner", "logo": "/media/sponsors/lovecrunch.png", "url": "https://naturespath.com/en-ca/pages/love-crunch?srsltid=AfmBOoo7oYWfdvwCUFlpIg5lPxdBB5d2dHuYzs8bnk2pc6eA43HS4rcU" },
-      { "name": "Dink", "note": "Partner", "logo": "/media/sponsors/dink.png", "url": "https://www.dinkpickleball.ca/" }
+      { "name": "Love Crunch", "note": "Partner", "logo": "/media/sponsors/lovecrunch.png", "url": "https://naturespath.com/en-ca/pages/love-crunch?srsltid=AfmBOoo7oYWfdvwCUFlpIg5lPxdBB5d2dHuYzs8bnk2pc6eA43HS4rcU" }
     ],
     "categories": [
       "Eyewear",
