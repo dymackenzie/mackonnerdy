@@ -180,9 +180,13 @@
     "title": "Mackonner's Team",
     "lede": "Every champion is backed by people who believe in the mission. These are the people in Mackonner's corner.",
     "members": [
-      { "name": "Dr. Sean Graham", "role": "Coach. Fitness.", "image": "/media/team/sean.webp", "focus": "center top" },
-      { "name": "Dr. Jeffrey Lee", "role": "Coach. Wellness.", "image": "/media/team/jeffrey.webp", "focus": "center 30%" },
-      { "name": "Allan Florendo", "role": "Coach. Community.", "image": "/media/team/alan.webp", "focus": "center" }
+      { "name": "Dr. Sean Graham", "role": "Performance Manager - Health", "image": "/media/team/sean.webp", "focus": "center top" },
+      { "name": "Dr. Jeffrey Lee", "role": "Wellness Coach", "image": "/media/team/jeffrey.webp", "focus": "center 30%" },
+      { "name": "Allan Florendo", "role": "Marketing & Brand Manager", "image": "/media/team/alan.webp", "focus": "center" },
+      { "name": "Mackenzie Dy", "role": "Digital Content Manager", "image": "/media/team/mackenzie.webp", "focus": "center" },
+      { "name": "Heidi Dy", "role": "Directors of Family and Athlete Support", "image": "/media/team/heidi.webp", "focus": "center" },
+      { "name": "Marvin Dy", "role": "Directors of Family and Athlete Support", "image": "/media/team/marvin.webp", "focus": "center" },
+      { "name": "Makayla Dy", "role": "Social Media Manager", "image": "/media/team/makayla.webp", "focus": "center" }
     ]
   },
 
